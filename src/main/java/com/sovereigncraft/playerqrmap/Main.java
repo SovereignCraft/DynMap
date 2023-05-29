@@ -1,14 +1,18 @@
-package net.rapust.qrcodemap;
+package com.sovereigncraft.playerqrmap;
+
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
-import net.rapust.qrcodemap.command.QRCode;
-import net.rapust.qrcodemap.event.MapInitialize;
+import com.sovereigncraft.playerqrmap.command.QRCode;
+import com.sovereigncraft.playerqrmap.command.MapInterface;
+import com.sovereigncraft.playerqrmap.event.MapInitialize;
+import com.sovereigncraft.playerqrmap.event.ItemHeld;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.MapMeta;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -26,7 +30,9 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         setInstance(this);
         getCommand("qrcode").setExecutor(new QRCode());
+        getCommand("mapinterface").setExecutor(new MapInterface());
         Bukkit.getPluginManager().registerEvents(new MapInitialize(), this);
+        Bukkit.getPluginManager().registerEvents(new ItemHeld(), this);
 
 
         File configFile = new File(getDataFolder()+File.separator+"config.yml");
@@ -40,12 +46,12 @@ public class Main extends JavaPlugin {
             mapsData.createNewFile();
         }
 
-        getLogger().info("QRCodeMap is enabled!");
+        getLogger().info("PlayerQRMap is enabled!");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("QRCodeMap is disabled!");
+        getLogger().info("PlayerQRMap is disabled!");
     }
 
     public static String getMessage(String messageCode) {

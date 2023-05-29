@@ -1,13 +1,11 @@
-package net.rapust.qrcodemap.command;
+package com.sovereigncraft.playerqrmap.command;
 
-import net.rapust.qrcodemap.Main;
-import net.rapust.qrcodemap.util.ImageCreator;
+import com.sovereigncraft.playerqrmap.Main;
+import com.sovereigncraft.playerqrmap.util.ImageCreator;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 public class QRCode implements CommandExecutor {

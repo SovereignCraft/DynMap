@@ -1,6 +1,6 @@
-name: QRCodeMap
-main: net.rapust.qrcodemap.Main
-author: rapustka#3096
+name: PlayerQRMap
+main: com.sovereigncraft.playerqrcodemap.Main
+author: Sovtoshi
 version: 1.0
 api-version: 1.13
 commands:
@@ -11,3 +11,10 @@ commands:
     aliases:
       - qr
       - qc
+  mapinterface:
+    description: Update interface map
+    usage: /playerqrcode <text|link>
+    permission: playerqrcode.create
+    aliases:
+      - plqr
+      - plqc

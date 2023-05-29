@@ -1,6 +1,5 @@
-package net.rapust.qrcodemap.util;
-
-import net.rapust.qrcodemap.Main;
+package com.sovereigncraft.playerqrmap.util;
+import com.sovereigncraft.playerqrmap.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -12,8 +11,6 @@ import org.bukkit.map.MapRenderer;
 import org.bukkit.map.MapView;
 
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MapCreator {
 
