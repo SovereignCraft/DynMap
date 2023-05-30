@@ -5,3 +5,6 @@ messages:
   success: "&aYou have successfully created a QR-Code!"
 settings:
   changeMapName: false
+  DefaultBackground: background.png
+  BackgroundActive: activeback.png
+  QRLogo: SNQRLogo.png
